@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.12.xsd">
+
+    <!-- Insert Dummy User Data -->
+    <changeSet id="insert-dummy-users" author="jameelAhmed">
+        <sql>
+            INSERT INTO user (first_name, last_name, email, password, phone_number, role)
+            VALUES ('Jameel', 'Ahmed', 'jameel.ahmed@example.com', 'password123', '1234567890', 'Student');
+
+            INSERT INTO user (first_name, last_name, email, password, phone_number, role)
+            VALUES ('Waji', 'ul Hassan', 'waji.ul.hassan@example.com', 'password456', '9876543210', 'ADMIN');
+        </sql>
+    </changeSet>
+
+    <!-- Insert Dummy Profile Data -->
+    <changeSet id="insert-dummy-profiles" author="jameelAhmed">
+        <sql>
+            INSERT INTO profile (bio, user_id)
+            VALUES ('I am Java Developer', 1);
+
+            INSERT INTO profile (bio, user_id)
+            VALUES ('I am Data Scientist', 2);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
